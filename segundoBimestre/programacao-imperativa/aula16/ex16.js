@@ -16,3 +16,21 @@
 // as palavras sejam passadas de forma dinâmica e seja você quem decide quais
 // palavras ele deve dizer.
 
+function multiplo(x, y, palavra1, palavra2)
+
+lk
+
+
+
+
+let fizzOrBuzz = () => {
+    for (n = 1; n <= 100; n++) {
+      let fizzBuzz = ''
+      if (n % 3 == 0) fizzBuzz += 'Fizz'
+      if (n % 5 == 0) fizzBuzz += 'Buzz'
+      console.log(fizzBuzz || n)
+    }
+  }
+  
+  fizzOrBuzz()
+  
