@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+
+body {
+    background-color: rgb(27, 27, 27);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(51, 51, 51);
+    padding: 24px;
+}
+
+.main-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.main-menu a {
+    opacity: 0.6;
+    color: white;
+    text-decoration: none;
+    transition: .4s ease-in-out;
+}
+
+.main-menu a:hover {
+    opacity: 1;
+}
+
+main {
+    padding: 42px;
+}
+
+main h1 {
+    color: white;
+}
+
+.video {
+    width:400px;
+    transition: .5s ease-in-out;
+}
+
+.video:hover {
+
+}

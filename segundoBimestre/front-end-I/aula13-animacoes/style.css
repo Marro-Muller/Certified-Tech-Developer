@@ -1,0 +1,29 @@
+@keyframes ball {
+    0% {
+        opacitiy: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(50px);
+    }
+
+    75% {
+        opacity: 0.7;
+        transform: translateX(70px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.ball {
+    animation: 2s;
+    background-color: turquoise;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+}
