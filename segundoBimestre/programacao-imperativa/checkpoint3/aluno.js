@@ -1,10 +1,15 @@
-const aluno = new Aluno('João', 10, [7, 8, 9]);
-function Aluno(nome, quantidadeDeFaltas, notas) {
+function Aluno(nome, qtdFaltas, notas){
     this.nome = nome;
-    this.quantidadeDeFaltas = quantidadeDeFaltas;
+    this.qtdFaltas = qtdFaltas;
     this.notas = notas;
-    calcularMedia = () => (aluno.notas.reduce((a, b) => a + b) / aluno.notas.length);
-    faltas = () => aluno.quantidadeDeFaltas = ++aluno.quantidadeDeFaltas;    
-}
-aluno.Aluno = Aluno;
-module.exports = aluno;
+    this.calcularMedia = () => {
+       const somaMedia = this.notas.reduce((acumulador, nota) => acumulador + nota)
+       const qtdNotas = this.notas.length;
+       const media = somaMedia / qtdNotas;
+
+       return media;
+    }
+    this.adicionarFalta = () => this.qtdFaltas++
+};
+
+module.exports = Aluno;

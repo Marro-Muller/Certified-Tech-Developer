@@ -1,32 +1,37 @@
-const aluno = require('./aluno');
-const arrayEstudantes = [];
-arrayEstudantes.push(new aluno.Aluno('Matheus Galvão', 2, [7, 8, 9]));
-arrayEstudantes.push(new aluno.Aluno('Maria Rosa', 3, [8, 8, 9]));
-arrayEstudantes.push(new aluno.Aluno('Fabrina Nunes', 2, [7, 8, 8]));
-arrayEstudantes.push(new aluno.Aluno('Jonathas Magalhães', 3, [9, 8, 9]));
-arrayEstudantes.push(new aluno.Aluno('Nicholas Ruas', 4, [7, 8, 8]));
-arrayEstudantes.push(new aluno.Aluno('Matheus Afonso', 2, [7, 8, 7]));
+let Aluno = require('./aluno')
 
-const curso = {
+//Objeto literal do curso
+
+let curso = {
     nome: 'Programação Imperativa',
-    nota: 6,
-    faltas: 4,
-    estudantes: arrayEstudantes,
-    adicionarEstudante: (nome, nota, faltas) => {
-        this.estudantes.push(new aluno.Aluno(nome, nota, faltas));
-    },
-    calculaAprova: (Aluno) => {
-        let media = Aluno.notas.reduce((a, b) => a + b, 0)/Aluno.notas.length);
+    notaAprovacao: 7,
+    faltasMaximas: 3,
+    listaEstudantes: [],
+    //Adicionar aluno
+    adicionarAluno: function(...aluno) {
+       this.listaEstudantes.push(...aluno)
+   },
 
-        if (media >= this.nota && Aluno.faltas < this.faltas) {
-            return true;
-        }
-        if (Aluno.faltas === this.faltas && media >= this.nota*1.1) {
-            return true;
-        } else {
-            return false;
-    },
-};
+   //Verificar aprovação do aluno
+   aprovarAluno: function(aluno) {
+       const media = aluno.calcularMedia()
+       if (aluno.qtdFaltas < this.faltasMaximas && media >= this.notaAprovacao) {
+       return true
+       }else if(aluno.qtdFaltas == this.faltasMaximas && media >= this.notaAprovacao * 1.1){
+       return true
+       }else{
+       return false
+       }
+   },
+
+   //Criar lista de aprovados
+   listarAprovados: function(){
+       let listaDeAprovados = [];
+       this.listaEstudantes.forEach(aluno => {
+          listaDeAprovados.push(this.aprovarAluno(aluno))
+       })
+       return listaDeAprovados
+   }
+}
 
 module.exports = curso;
-console.log(curso.estudantes);
